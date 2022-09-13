@@ -23,9 +23,7 @@ jobs:
     - name: change Github url
       run: git config --global --add url."git@github.com:".insteadOf "https://github.com/"
     - name: SSH
-      run: | 
-        eval "$(ssh-agent -s)"
-        ssh-add -l -E sha256
+      run: ssh-add -l -E sha256
 
     - name: get frameworks
       if: steps.cache.outputs.cache-hit != 'true'
